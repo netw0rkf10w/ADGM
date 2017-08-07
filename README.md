@@ -1,3 +1,4 @@
+# Alternating Direction Graph Matching
 This is an implementation of Alternating Direction Graph Matching. 
 
 v0.1, 24/02/2017
@@ -17,9 +18,7 @@ BibTeX:
  year = {2017}
 }
 
-
-*********************
-NOTE: 
+# NOTE: 
 
 - Before using this software, please check if 
 any updated version is available on my website www.khue.fr.
@@ -37,8 +36,7 @@ indicate that.
 - In the current version, only third-order potentials are supported.
 
 
-*********************
-INSTALLATION
+# INSTALLATION
 
 In Matlab, go to the folder ADGMv0.1/ADGM/ and run:
 
@@ -46,8 +44,7 @@ compile.m
 
 
 
-*********************
-USAGE
+# USAGE
 
 X = FUNCTION(X0, [], [], [], [], indH, valH, rho, MAX_ITER, verbose, eta, iter1, iter2);
 
@@ -90,8 +87,7 @@ solves a MAXIMIZATION problem (for the ease of comparison with the other methods
 Thus, the input potential tensor valH should represent the similarity between the graphs.
 
 
-*********************
-DEMO
+# DEMO
 
 The script demo.m implements a synthetic third-order graph matching problem 
 and solves it using the two variants of ADGM as well as Duchenne's Tensor 
