@@ -1,28 +1,20 @@
-# Alternating Direction Graph Matching
-This is an implementation of Alternating Direction Graph Matching. 
+# Alternating Direction Graph Matching (ADGM)
+This repository contains the code for ADGM introduced in the paper [Alternating Direction Graph Matching]
+(https://arxiv.org/abs/1611.07583) (CVPR 2017) by [D. Khuê Lê-Huu](https://khue.fr) and [Nikos Paragios](http://cvn.ecp.fr/personnel/nikos/).
 
-v0.1, 24/02/2017
- 
-The software is written by D. Khuê Lê-Huu (khue.le@centralesupelec.fr).
+v0.1, 24/02/2017, written by D. Khuê Lê-Huu.
  
 If you use any part of this code, please cite:
- 
-D. Khuê Lê-Huu and Nikos Paragios. Alternating Direction Graph Matching. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
-
-BibTeX:
-
+```
 @inproceedings{lehuu2017adgm,
  title={Alternating Direction Graph Matching},
  author={L{\^e}-Huu, D. Khu{\^e} and Paragios, Nikos},
  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})},
  year = {2017}
 }
+```
 
 ## Note
-
-- Before using this software, please check if 
-any updated version is available on my website www.khue.fr.
-
 - This is a preliminary re-implementation in C++ Eigen and should be 
 considered as pre-release. I haven't tested it on the full benchmark yet 
 and thus the performance is not guaranteed. If you observe some strange 
@@ -37,11 +29,10 @@ indicate that.
 
 
 ## Installation
-
-In Matlab, go to the folder ADGMv0.1/ADGM/ and run:
-
+In Matlab, go to the folder ```ADGM/``` and run:
+```
 compile.m
-
+```
 
 
 ## Usage
@@ -49,9 +40,9 @@ compile.m
 X = FUNCTION(X0, [], [], [], [], indH, valH, rho, MAX_ITER, verbose, eta, iter1, iter2);
 ```
 
-where FUNCTION can be one of the following: ```ADGM1, ADGM2, ADGM1_SYMMETRIC, ADGM2_SYMMETRIC```.
+where ```FUNCTION``` can be one of the following: ```ADGM1, ADGM2, ADGM1_SYMMETRIC, ADGM2_SYMMETRIC```.
 If the third-order tensor valH is super-symmetric then you should use 
-the _SYMMETRIC versions because they offer several times speedup by 
+the ```_SYMMETRIC``` versions because they offer several times speedup by 
 exploiting the symmetric structure of the tensor.
 
 The parameters of the above function are:
@@ -80,7 +71,7 @@ iter2 = 50;
 (and vice-versa: increasing them usually offer higher objective values) 
 
 
-### Important 
+**Important:**
 - The indices in indH start from 0 (i.e. C++ indices and not Matlab ones)
 - Although ADGM is formulated as a minimzation problem, the above function 
 solves a MAXIMIZATION problem (for the ease of comparison with the other methods). 
@@ -88,30 +79,29 @@ Thus, the input potential tensor valH should represent the similarity between th
 
 
 ## Demo
-
 The script demo.m implements a synthetic third-order graph matching problem 
 and solves it using the two variants of ADGM as well as Duchenne's Tensor 
 Matching algorithm (for comparison).
 
 To succesfully run it, follow the steps below:
 
-1. In Matlab, go to ADGMv0.1/ann_mwrapper and run:
+1. In Matlab, go to ```ann_mwrapper/``` and run:
 ```
 ann_compile_mex
 ```
 
-2. Go back to ADGMv0.1/ and run:
+2. Go back to the main folder and run:
 ```
 mex assignmentoptimal.cpp
 ```
 
-3. Go to ADGMv0.1/TM/ and run:
+3. Go to ```TM/``` and run:
 ```
 mex mexSource/mexComputeFeature.cpp -output mex/mexComputeFeature
 mex mexSource/mexTensorMatching.cpp -output mex/mexTensorMatching
 ```
 
-4. Go back to ADGMv0.1/ and run:
+4. Go back to the main folder and run:
 ```
 demo
 ```
