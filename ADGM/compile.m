@@ -1,0 +1,5 @@
+mex mexGetMatchingScore.cpp
+
+mex CXXFLAGS="\$CXXFLAGS -std=c++11" CXXOPTIMFLAGS='\$CXXOPTIMFLAGS -Ofast -DNDEBUG' -I"./Eigen"  mexADGM_3rdORDER.cpp
+
+mex CXXFLAGS="\$CXXFLAGS -std=c++11" CXXOPTIMFLAGS='\$CXXOPTIMFLAGS -Ofast -DNDEBUG' -I"./Eigen"  mexADGM_3rdORDER_SYMMETRIC.cpp
