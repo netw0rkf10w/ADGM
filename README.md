@@ -18,7 +18,7 @@ BibTeX:
  year = {2017}
 }
 
-# NOTE: 
+## Note
 
 - Before using this software, please check if 
 any updated version is available on my website www.khue.fr.
@@ -36,7 +36,7 @@ indicate that.
 - In the current version, only third-order potentials are supported.
 
 
-# INSTALLATION
+## Installation
 
 In Matlab, go to the folder ADGMv0.1/ADGM/ and run:
 
@@ -44,12 +44,12 @@ compile.m
 
 
 
-# USAGE
-
+## Usage
+```
 X = FUNCTION(X0, [], [], [], [], indH, valH, rho, MAX_ITER, verbose, eta, iter1, iter2);
+```
 
-where FUNCTION can be one of the following: 
-						ADGM1, ADGM2, ADGM1_SYMMETRIC, ADGM2_SYMMETRIC. 
+where FUNCTION can be one of the following: ```ADGM1, ADGM2, ADGM1_SYMMETRIC, ADGM2_SYMMETRIC```.
 If the third-order tensor valH is super-symmetric then you should use 
 the _SYMMETRIC versions because they offer several times speedup by 
 exploiting the symmetric structure of the tensor.
@@ -80,14 +80,14 @@ iter2 = 50;
 (and vice-versa: increasing them usually offer higher objective values) 
 
 
-IMPORTANT: 
+### Important 
 - The indices in indH start from 0 (i.e. C++ indices and not Matlab ones)
 - Although ADGM is formulated as a minimzation problem, the above function 
 solves a MAXIMIZATION problem (for the ease of comparison with the other methods). 
 Thus, the input potential tensor valH should represent the similarity between the graphs.
 
 
-# DEMO
+## Demo
 
 The script demo.m implements a synthetic third-order graph matching problem 
 and solves it using the two variants of ADGM as well as Duchenne's Tensor 
@@ -96,20 +96,24 @@ Matching algorithm (for comparison).
 To succesfully run it, follow the steps below:
 
 1. In Matlab, go to ADGMv0.1/ann_mwrapper and run:
-
+```
 ann_compile_mex
+```
 
 2. Go back to ADGMv0.1/ and run:
-
+```
 mex assignmentoptimal.cpp
+```
 
 3. Go to ADGMv0.1/TM/ and run:
-
+```
 mex mexSource/mexComputeFeature.cpp -output mex/mexComputeFeature
 mex mexSource/mexTensorMatching.cpp -output mex/mexTensorMatching
+```
 
 4. Go back to ADGMv0.1/ and run:
-
+```
 demo
+```
 
 For any questions or bug reports, please send me an email.
