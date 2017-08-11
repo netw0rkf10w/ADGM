@@ -1,5 +1,5 @@
 # Alternating Direction Graph Matching (ADGM)
-This repository contains the code for ADGM introduced in the paper [Alternating Direction Graph Matching](https://arxiv.org/abs/1611.07583) (CVPR 2017) by [D. Khuê Lê-Huu](https://khue.fr) and [Nikos Paragios](http://cvn.ecp.fr/personnel/nikos/).
+This repository contains the code for ADGM introduced in the paper [Alternating Direction Graph Matching](https://khue.fr/papers/adgm_cvpr2017.pdf) (CVPR 2017) by [D. Khuê Lê-Huu](https://khue.fr) and [Nikos Paragios](http://cvn.ecp.fr/personnel/nikos/).
 
 v0.1, 24/02/2017, written by D. Khuê Lê-Huu.
  
