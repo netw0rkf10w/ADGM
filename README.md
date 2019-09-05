@@ -96,13 +96,33 @@ mex assignmentoptimal.cpp
 
 3. Go to ```TM/``` and run:
 ```
-mex mexSource/mexComputeFeature.cpp -output mex/mexComputeFeature
-mex mexSource/mexTensorMatching.cpp -output mex/mexTensorMatching
+mex GCC='/usr/bin/g++-4.8' mexSource/mexComputeFeature.cpp -output mex/mexComputeFeature
+mex GCC='/usr/bin/g++-4.8' mexSource/mexTensorMatching.cpp -output mex/mexTensorMatching
 ```
 
 4. Go back to the main folder and run:
 ```
 demo
 ```
+
+## Troubleshooting
+
+When running the demo, if you obtain errors like this:
+```
+Invalid MEX-file '*.mexa64':
+Missing symbol '_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_assignERKS4_' required by
+'*.mexa64'
+```
+then probably your C++ compiler is not supported by MATLAB.
+
+To resolve this issue,
+you can run `mex -setup c++` and choose an appropritate compiler, as recommended by
+[MATLAB's official documentation](https://fr.mathworks.com/help/matlab/matlab_external/choose-c-or-c-compilers.html).
+
+Alternatively, you can specify a compiler as an argument for `mex`. For example, on Linux:
+```
+mex GCC='/usr/bin/g++-4.8' <file.cpp>
+```
+Make sure to replace `mex` with `mex GCC='/usr/bin/g++-4.8'` to all the commands in the previous sections (including those in `ADGM/compile.m`).
 
 For any questions or bug reports, please send me an email.
