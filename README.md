@@ -1,6 +1,8 @@
 # Alternating Direction Graph Matching (ADGM)
 This repository contains the code for ADGM introduced in the paper [Alternating Direction Graph Matching](https://khue.fr/papers/adgm_cvpr2017.pdf) (CVPR 2017) by [D. Khuê Lê-Huu](https://khue.fr) and [Nikos Paragios](http://cvn.centralesupelec.fr/~nikos).
 
+A more recent implementation in Python can be found here: https://github.com/netw0rkf10w/pyADGM
+
 v0.1, 24/02/2017, written by D. Khuê Lê-Huu.
  
 If you use any part of this code, please cite:
